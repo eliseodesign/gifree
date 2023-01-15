@@ -1,10 +1,11 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import React, { useContext, useState } from "react";
 import "./styles/Form.css";
 import { Context } from "../Context/Context";
 
 const Form = () => {
 
+  const navigate = useNavigate()
   const location = useLocation()
   console.log(location)
 
@@ -37,7 +38,7 @@ const Form = () => {
         <label htmlFor="search">Search for stuff</label>
         <input
           onChange={handleChange}
-          // value={input}
+          value={input}
           id="search"
           type="search"
           placeholder="Search..."
