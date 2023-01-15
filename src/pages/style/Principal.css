@@ -1,0 +1,62 @@
+:root{
+  --columns:2;
+  --gap:1em
+}
+.Principal{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+}
+.section-topic{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.section-topic h2{
+  margin: 0 0 .5em 0;
+  width: 100%;
+  font-size: 1.3em;
+  text-align: left;
+  text-transform: capitalize;
+}
+.section-topic h2::after{
+  display: block;
+  content: " ";
+  width: 20px;
+  height: .2em;
+  background:#0093C1;
+}
+
+.carrusel{
+  /* grid-template-columns: 1fr 1fr; */
+  column-count: var(--columns);
+  /* height: 300px; */
+  /* display: flex;
+  flex-direction: row; */
+  overflow: scroll;
+  gap: .5em;
+}
+
+
+.carrusel .Gif{
+  width: 100%;
+  /* object-fit: contain; */
+  /* width:300px; */
+}
+
+
+
+@media (min-width:600px){
+  :root{
+    --columns:3;
+  }
+}
+@media (min-width:800px){
+  :root{
+    --columns:4;
+    --gap:.3em
+  }
+}

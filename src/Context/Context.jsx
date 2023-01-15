@@ -1,19 +1,19 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useRef, useState } from "react";
 
-export const Context = createContext({})
+export const Context = createContext({});
 
-export const Provider = ({children}) =>{
-  
+export const Provider = ({ children }) => {
+  const hamburger = useRef(null);
+  const capa = useRef(null);
+
   const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
 
-
-
-
-  return(
+  return (
     <Context.Provider
-      value={{input}}>
-
+      value={{ hamburger, capa, input, setInput, loading, setLoading }}
+    >
       {children}
     </Context.Provider>
-  )
-}
+  );
+};

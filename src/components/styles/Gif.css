@@ -1,0 +1,33 @@
+.Gif{
+  position: relative;
+  width: 100%;
+  display: flex;
+  /* fle */
+  padding: 0;
+  margin-bottom: .7em;
+}
+
+.Gif img{
+  width: 100%;
+  min-height: 100px;
+}
+
+.Gif h4{
+  
+  background: linear-gradient(to bottom,transparent, #000);
+  position: absolute;
+  bottom: 0;
+  font-size: .9em;
+  margin-bottom: 0;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.616);
+}
+
+
+.Gif-home h4{
+  color: transparent;
+}
+
+.Gif-home:hover h4{
+  color: rgba(255, 255, 255, 0.74);
+}
