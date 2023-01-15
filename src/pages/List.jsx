@@ -50,7 +50,7 @@ const List = () => {
               return(gif.id === "SinResultados" 
               ?
                 <div key=".">
-                  <h3>no hay resultados </h3>
+                  
                   <Gif gif={gif}/>
                   
                 </div>

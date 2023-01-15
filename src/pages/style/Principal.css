@@ -9,10 +9,10 @@
 }
 .section-topic{
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   flex-direction: column;
-
+  overflow: hidden;
 }
 
 .section-topic h2{
@@ -36,7 +36,7 @@
   /* height: 300px; */
   /* display: flex;
   flex-direction: row; */
-  overflow: scroll;
+  /* overflow: scroll; */
   gap: .5em;
 }
 
