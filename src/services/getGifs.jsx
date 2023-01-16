@@ -1,7 +1,7 @@
-
+import {API_KEY} from "./config"
 export default async function getGifs({keyword = "popular", limit = 5 }){
 
-  const res = await fetch(`https://api.giphy.com/v1/gifs/search?q=${keyword}&api_key=8GegqHwF15gJSENH4oGn810OqOHJaWNr&limit=${limit}`)
+  const res = await fetch(`https://api.giphy.com/v1/gifs/search?q=${keyword}&api_key=${API_KEY}&limit=${limit}`)
   const response = await res.json()
   const { data = [] } = response
   

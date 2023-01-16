@@ -9,8 +9,6 @@
 }
 .section-topic{
   display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
   flex-direction: column;
   overflow: hidden;
 }
@@ -31,20 +29,14 @@
 }
 
 .carrusel{
-  /* grid-template-columns: 1fr 1fr; */
   column-count: var(--columns);
-  /* height: 300px; */
-  /* display: flex;
-  flex-direction: row; */
-  /* overflow: scroll; */
   gap: .5em;
 }
 
 
 .carrusel .Gif{
-  width: 100%;
-  /* object-fit: contain; */
-  /* width:300px; */
+  
+  min-width: 100%;
 }
 
 

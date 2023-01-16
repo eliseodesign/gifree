@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 import getOneGif from "../services/getOneGif"
 
 const Detail = () => {
@@ -14,16 +14,15 @@ const Detail = () => {
         setImgData(img)
       })
     
-  }, [])
+  }, [imgData])
 
-  console.log(imgData)
   
   return ( 
   <div>
     <h2>{imgData.title}</h2>
     <p>@{imgData.username}</p>
     <img src={imgData.url} alt="" />
-  </div> );
+  </div> )
 }
  
 export default Detail;

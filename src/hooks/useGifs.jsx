@@ -4,8 +4,7 @@ import getGifs from "../services/getGifs";
 import getTrending from "../services/getTrending";
 
 export function useGifs([type, info]) {
-  // search
-  // const {loading, gifs} = useGifs(["search", {keyword, limit}])
+  // SEARCH  const {loading, gifs} = useGifs(["search", {keyword, limit}])
   if (type === "search") {
     const { keyword, limit } = info;
     const { loading, setLoading, setGifs, gifs } = useContext(Context);
@@ -33,8 +32,7 @@ export function useGifs([type, info]) {
     return { loading, gifs };
   }
 
-  //trending
-  // const {gifs} = useGifs(["trend", {limit}])
+  //TRENDING const {gifs} = useGifs(["trend", {limit}])
   if (type === "trend") {
     const { limit } = info;
 

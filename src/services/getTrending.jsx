@@ -1,6 +1,8 @@
-export default async function getGifs({limit = 5 }){
+import { API_KEY } from "./config"
 
-  const res = await fetch(`https://api.giphy.com/v1/gifs/trending?api_key=8GegqHwF15gJSENH4oGn810OqOHJaWNr&limit=${limit}`)
+export default async function getGifs({limit  }){
+
+  const res = await fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=${limit}`)
   const response = await res.json()
   const { data = [] } = response
   
@@ -9,7 +11,7 @@ export default async function getGifs({limit = 5 }){
     const { url } = images.fixed_height_downsampled
 
     
-    return { title, id, url }
+    return { title, id, url } 
 
   })
 

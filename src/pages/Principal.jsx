@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import Gif from "../components/Gif";
 import { useGifs } from "../hooks/useGifs";
 import getGifs from "../services/getGifs";
-
 import "./style/Principal.css";
 
 const Principal = () => {
-  const TOPICS = ["futbol", "super heroes ",  "memes"];
+  const TOPICS = ["futbol", "super heroes ", "memes"];
   const [gifsTopics, setgifsTopics] = useState([]);
 
   const loadGifs = async () => {
@@ -24,7 +23,6 @@ const Principal = () => {
     loadGifs();
   }, []);
 
-  // const {gifs} = useGifs(["trend", {limit}])
   const { trending } = useGifs(["trend", { limit: 10 }]);
 
   return (
@@ -32,11 +30,9 @@ const Principal = () => {
       <div className="section-topic">
         <h2>Trending</h2>
         <div className="carrusel">
-        {
-          
-          trending.map((gif) => <Gif key={gif.id} gif={gif} />)
-        }
-
+          {trending.map((gif) => (
+            <Gif key={gif.id} gif={gif} />
+          ))}
         </div>
       </div>
 

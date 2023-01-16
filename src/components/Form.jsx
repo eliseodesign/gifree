@@ -4,34 +4,24 @@ import "./styles/Form.css";
 import { Context } from "../Context/Context";
 
 const Form = () => {
-
-  const navigate = useNavigate()
-  const location = useLocation()
-
-  const {input, setInput} = useContext(Context)
   
-
-  function handleChange(e) {
-    setInput(e.target.value);
-  }
-
+  const navigate = useNavigate();
+  const { input, setInput } = useContext(Context);
+  const handleChange = (e) => setInput(e.target.value)
+  
   function handleSubmit(e) {
     e.preventDefault();
     navigate("/search/" + input);
   }
 
-  const [formDown, setformDown] = useState(false)
-  window.onscroll = function() {
-    if(window.scrollY > 150) setformDown(true)
-    else setformDown(false)
-
+  const [formDown, setformDown] = useState(false);
+  window.onscroll = function () {
+    if (window.scrollY > 150) setformDown(true);
+    else setformDown(false);
   };
-  
 
   return (
-    <div className={formDown?"container-form active":"container-form"} >
-
-      {/* <Logo   /> */}
+    <div className={formDown ? "container-form active" : "container-form"}>
       <form onSubmit={handleSubmit} role="search">
         <label htmlFor="search">Search for stuff</label>
         <input
@@ -45,8 +35,6 @@ const Form = () => {
         />
         <button type="submit">🔎</button>
       </form>
-
-      
     </div>
   );
 };

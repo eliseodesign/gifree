@@ -104,13 +104,13 @@
   
 }
 .Gif:nth-child(2n){
-  background:rgb(31, 147, 255);
+  background:rgb(0, 132, 255);
 }
 .Gif:nth-child(2n + 1){
   background:rgb(128, 31, 255);
 }
 .Gif:nth-child(2n + 3){
-  background:rgb(251, 255, 31);;
+  background:rgb(18, 255, 109);;
 }
 
 
