@@ -95,6 +95,25 @@
   column-count: var(--columns);
 }
 
+.list{
+  --a:rgb(31, 147, 255);
+  --b:rgb(128, 31, 255);
+  --c:rgb(255, 31, 255);
+  --d:rgb(255, 39, 31);
+  --e:rgb(255, 214, 31);
+  
+}
+.Gif:nth-child(2n){
+  background:rgb(31, 147, 255);
+}
+.Gif:nth-child(2n + 1){
+  background:rgb(128, 31, 255);
+}
+.Gif:nth-child(2n + 3){
+  background:rgb(251, 255, 31);;
+}
+
+
 
 @media (min-width:600px){
   :root{
