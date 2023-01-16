@@ -9,9 +9,11 @@ export const Provider = ({ children }) => {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const [gifs, setGifs] = useState([]);
+
   return (
     <Context.Provider
-      value={{ hamburger, capa, input, setInput, loading, setLoading }}
+      value={{ hamburger, capa, input, setInput, loading, setLoading, gifs, setGifs }}
     >
       {children}
     </Context.Provider>

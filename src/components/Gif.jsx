@@ -11,7 +11,7 @@ const Gif = ({gif}) => {
    
     <h4>{gif.title}</h4>
 
-    <img src={gif.url} alt={gif.title} />
+    <img loading="lazy" src={gif.url} alt={gif.title} />
   </Link> );
 }
  

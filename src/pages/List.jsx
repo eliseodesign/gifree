@@ -1,39 +1,20 @@
-import React, { useContext, useEffect, useState } from "react";
 import Gif from '../components/Gif'
-import getGifs from '../services/getGifs'
 import { useParams } from "react-router-dom";
 
 import "./style/List.css"
-import { Context } from "../Context/Context";
+import { useGifs } from "../hooks/useGifs";
 
 
 const List = () => {
   const  {keyword} = useParams()
+  
 
-  const {loading, setLoading} = useContext(Context)
-
-  const [gifs, setGifs] = useState([]);
+  const {loading, gifs} = useGifs(["search",{keyword, limit:10}]) //my custom hooks for get gifs
 
 
-  useEffect(() => {
-    setLoading(true)
-
-    getGifs({keyword, limit:10 }).then((gifs) => {
-      if(gifs.length === 0) {
-        setLoading(false)
-        setGifs([{
-          id:"SinResultados",
-          title:"no fount",
-          url:"https://media1.giphy.com/media/ZXwdJuk172dQwAqMGv/200_d.gif?cid=c7",
-        }])
-          return 
-      }
-      setLoading(false)
-      setGifs(gifs)
-    });
-    
-  }, [keyword]);
-
+  // const {loading, gifs} = useGifs(["search", {keyword, limit}]) 
+  // const {gifs} = useGifs(["trend", {limit}]) 
+  // const {gif} = useGifs(["getOne", {id}]) 
 
   return (
     <>

@@ -7,14 +7,12 @@ const Form = () => {
 
   const navigate = useNavigate()
   const location = useLocation()
-  console.log(location)
 
   const {input, setInput} = useContext(Context)
   
 
   function handleChange(e) {
     setInput(e.target.value);
-    console.log("input")
   }
 
   function handleSubmit(e) {

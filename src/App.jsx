@@ -7,9 +7,16 @@ import { Context } from "./Context/Context";
 import Principal from "./pages/Principal";
 import NoutFount from "./pages/NotFount";
 
+
 function App() {
 
-  const {capa} = useContext(Context)
+  const {capa, gifs} = useContext(Context)
+
+
+  
+ 
+  
+
   return (  
     <div className="App">
       <BROWSER> 
