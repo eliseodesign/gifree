@@ -5,7 +5,10 @@ import getOneGif from "../services/getOneGif"
 const Detail = () => {
 
   const {id} = useParams()
-  const [imgData, setImgData] = useState({})
+  const [imgData, setImgData] = useState({
+    title:"Titulo",
+    username:"user"
+  })
 
 
   useEffect(() => {

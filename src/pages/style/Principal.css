@@ -13,19 +13,21 @@
   overflow: hidden;
 }
 
-.section-topic h2{
+h2{
+  margin: 0 auto;
   margin: 0 0 .5em 0;
-  width: 100%;
+  width: max-content;
   font-size: 1.3em;
   text-align: left;
   text-transform: capitalize;
 }
-.section-topic h2::after{
+h2::after{
   display: block;
   content: " ";
   width: 20px;
   height: .2em;
   background:#0093C1;
+  /* margin-top: ; */
 }
 
 .carrusel{

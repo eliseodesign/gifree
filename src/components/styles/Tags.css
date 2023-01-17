@@ -1,0 +1,40 @@
+.Tags{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: .5em;
+  margin: 0;
+}
+
+.Tags a{
+  padding: .2em .5em;
+  background: #f42;
+  border-radius: .2em .5em;
+  color: #fff;
+  text-decoration: none;
+  font-size: .8em;
+  text-transform: capitalize;
+}
+@media (hover:hover) {
+  .Tags a:hover{
+    filter: brightness(1.5);
+  }
+}
+.Tags a:nth-child(2n){
+  background:rgb(0, 102, 197);
+}
+.Tags a:nth-child(2n + 1){
+  background:rgb(85, 23, 167);
+}
+.Tags a:nth-child(2n + 3){
+  background:rgb(22, 143, 69);;
+}
+
+@media (min-width:800px){
+  .Tags{
+
+    justify-content: flex-start ;
+  }
+}

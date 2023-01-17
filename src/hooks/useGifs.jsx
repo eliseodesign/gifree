@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Context } from "../Context/Context";
+import { ContextData } from "../Context/ContextData";
 import getGifs from "../services/getGifs";
 import getTrending from "../services/getTrending";
 
@@ -7,26 +7,31 @@ export function useGifs([type, info]) {
   // SEARCH  const {loading, gifs} = useGifs(["search", {keyword, limit}])
   if (type === "search") {
     const { keyword, limit } = info;
-    const { loading, setLoading, setGifs, gifs } = useContext(Context);
+    const { loading, setLoading, setGifs, gifs, last, setLast } = useContext(ContextData);
 
     useEffect(() => {
-      setLoading(true);
 
-      getGifs({ keyword, limit }).then((gifs) => {
-        if (gifs.length === 0) {
+      if(gifs.length === 0 || keyword !== last){
+        console.log("jaja")
+        setLoading(true);
+        getGifs({ keyword, limit }).then((gifs) => {
+          if (gifs.length === 0) {
+            setLoading(false);
+            setGifs([
+              {
+                id: "SinResultados",
+                title: "no fount",
+                url: "https://media1.giphy.com/media/ZXwdJuk172dQwAqMGv/200_d.gif?cid=c7",
+              },
+            ]);
+            return;
+          }
           setLoading(false);
-          setGifs([
-            {
-              id: "SinResultados",
-              title: "no fount",
-              url: "https://media1.giphy.com/media/ZXwdJuk172dQwAqMGv/200_d.gif?cid=c7",
-            },
-          ]);
-          return;
-        }
-        setLoading(false);
-        setGifs(gifs);
-      });
+          setGifs(gifs);
+        })
+      }
+
+      
     }, [keyword]);
 
     return { loading, gifs };
@@ -36,15 +41,20 @@ export function useGifs([type, info]) {
   if (type === "trend") {
     const { limit } = info;
 
-    const [trending, setTrending] = useState([]);
 
-    useEffect(() => {
-      getTrending({ limit }).then((gifs) => {
-        
-        setTrending(gifs);
-      });
-    }, []);
+    const {trendGifs, setTrendGifs} = useContext(ContextData)
+    if(trendGifs.length === 0) {
+      useEffect(() => {
+        getTrending({ limit }).then((gifs) => {
+          
+          setTrendGifs(gifs);
+        });
+      }, []);
+       
+      
+    }
     
-    return {trending};
+    
+    return {trendGifs};
   }
 }

@@ -1,12 +1,12 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import React, { useContext, useState } from "react";
 import "./styles/Form.css";
-import { Context } from "../Context/Context";
+import { ContextApp } from "../Context/ContextApp";
 
 const Form = () => {
   
   const navigate = useNavigate();
-  const { input, setInput } = useContext(Context);
+  const { input, setInput } = useContext(ContextApp);
   const handleChange = (e) => setInput(e.target.value)
   
   function handleSubmit(e) {

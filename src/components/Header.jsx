@@ -1,11 +1,11 @@
 import { useContext} from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/Logo";
-import { Context } from "../Context/Context";
+import { ContextApp } from "../Context/ContextApp";
 import "./styles/Header.css";
 
 const Header = () => {
-  const {hamburger, capa} = useContext(Context)
+  const {hamburger, capa} = useContext(ContextApp)
 
   return (
     <header>
