@@ -26,14 +26,14 @@ const Principal = ({children}) => {
   //   loadGifs();
   // }, []);
 
-  const { trendGifs } = useGifs(["trend", { limit: 10 }]);
+  const { trendGifs } = useGifs(["trend", { limit:20 }]);
 
   return (
     <div className="Principal">
       {children}
       <div className="section-topic">
         <h2>Trending</h2>
-        <div className="carrusel">
+        <div className="list">
           {trendGifs.map((gif) => (
             <Gif key={gif.id} gif={gif} />
           ))}

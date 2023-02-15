@@ -1,6 +1,6 @@
 :root{
   --columns:2;
-  --gap:1em
+
 }
 .lds-roller {
   display: inline-block;
@@ -91,7 +91,7 @@
 
 .list{
   width: 100%;
-  column-gap: var(--gap);
+  column-gap: .3em;
   column-count: var(--columns);
 }
 
@@ -115,6 +115,8 @@
 
 
 
+
+
 @media (min-width:600px){
   :root{
     --columns:3;
@@ -123,6 +125,5 @@
 @media (min-width:800px){
   :root{
     --columns:3;
-    --gap:.3em
   }
 }

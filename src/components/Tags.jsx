@@ -1,34 +1,32 @@
 import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ContextData } from "../Context/ContextData.jsx";
-import getTags from "../services/getTags.js"
-import "./styles/Tags.css"
+import { ContextData } from "../Context/ContextData";
+import { ContextApp } from "../Context/ContextApp";
+import getTags from "../services/getTags.js";
+import "./styles/Tags.css";
 const Tags = () => {
+  const { tags, setTags } = useContext(ContextData);
+  console.log(tags);
 
-
-  const {tags, setTags} = useContext(ContextData)
-  console.log(tags)
-
-  if(tags.length === 0){
+  if (tags.length === 0) {
     useEffect(() => {
-    
-      getTags(7)
-        .then( tagsR => setTags(tagsR))
-  
-    }, [])
-  
+      getTags(7).then((tagsR) => setTags(tagsR));
+    }, []);
   }
-  
 
-  
-  return ( 
+  const { setInput } = useContext(ContextApp);
+
+  return (
     <>
-    {/* <h2>Busquedas populares</h2> */}
-    <div className="Tags">
-      {tags.map(tag=> <Link to={"/search/:"+tag} key={tag}>{tag}</Link>)}
-    </div> 
+      <div className="Tags">
+        {tags.map((tag) => (
+          <Link onClick={() => setInput(tag)} to={"/search/:" + tag} key={tag}>
+            {tag}
+          </Link>
+        ))}
+      </div>
     </>
   );
-}
- 
+};
+
 export default Tags;
